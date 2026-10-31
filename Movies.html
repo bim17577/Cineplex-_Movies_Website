@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="movies.css">
+    <title>Movies</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="Home.html" class="logo" aria-label="Cineplex home"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><rect x="2" y="2" width="36" height="36" rx="11" fill="url(#logo-grad)"/><g fill="#fff" fill-opacity="0.35"><rect x="8" y="6" width="4" height="3" rx="1"/><rect x="15" y="6" width="4" height="3" rx="1"/><rect x="22" y="6" width="4" height="3" rx="1"/><rect x="29" y="6" width="4" height="3" rx="1"/><rect x="8" y="31" width="4" height="3" rx="1"/><rect x="15" y="31" width="4" height="3" rx="1"/><rect x="22" y="31" width="4" height="3" rx="1"/><rect x="29" y="31" width="4" height="3" rx="1"/></g><path class="logo-play" d="M16.5 13.5v13l11-6.5z" fill="#d6fc00"/></svg><span class="logo-text">CINE<span>PLEX</span></span></a>
+            <nav class="menu" id="site-menu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ul>
+                <form class="search" action="Movies.html" method="GET" role="search">
+                    <input type="search" name="q" class="searchTerm" placeholder="What are you looking for?" aria-label="Search movies">
+                    <button type="submit" class="searchButton" aria-label="Search"><i class="fa fa-search"></i></button>
+                </form>
+            </nav>
+            <a href="signup.html" class="signup-icon" aria-label="Sign up" title="Sign up"><i class="fas fa-user-plus"></i></a>
+            <button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="movie-details">
+            <h2>Movie Details</h2>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/p-16.jpg" alt="Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Dragon Heart3</h2>
+                        <p class="movie-details-description">Drago, a cursed dragon, and Gareth, a young knight, share an unbreakable bond.</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> February 10, 2013</p>
+                        <p class="movie-details-info"><strong>Director:</strong> Colin Teague</p>
+                        <p class="movie-details-info"><strong>Stars:</strong>
+                            Ben Kingsley, jullian moris, Ozama Oancea</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Action, Sci-Fi</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/k-3.webp" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Hotel Trasylvania3</h2>
+                        <p class="movie-details-description">Count Dracula feels lonely and depressed while running his hotel for monsters.</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> January 1, 2023</p>
+                        <p class="movie-details-info"><strong>Director:</strong> Genndy Tartakovsky</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Andy Samburg, Selena Gomez, Adam Zandler</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Animation, comedy</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/k-9.webp" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Jumanji</h2>
+                        <p class="movie-details-description">When Spencer goes back into the fantastical world of Jumanji, pals Martha, Fridge and Bethany re-enter the game to bring him home.</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> January 1, 2022</p>
+                        <p class="movie-details-info"><strong>Director:</strong> Jake Kasdan</p>
+                        <p class="movie-details-info"><strong>Stars:</strong>  Ruby Roundhouse, Bethany Walker, Alan Parrish</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Action, Romance</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/p-9.jpg" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Avatar2</h2>
+                        <p class="movie-details-description">jake Sully and Ney'tiri have formed a family and are doing everything to stay together.</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> December 16, 2023</p>
+                        <p class="movie-details-info"><strong>Director:</strong> James Cameron</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Zoe Saldana, Sam wortington</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Sci-fi, Action</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/k-15.jpg" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Central Intelligence</h2>
+                        <p class="movie-details-description">Accountant Calvin, who was the most popular boy at school, meets his ex-classmate, Bob, at a reunion.</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> June 10, 2013</p>
+                        <p class="movie-details-info"><strong>Director:</strong> Rawson Marshall</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Kevin Heart, Dwayne Johnson</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Comedy , Action</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/p-4.png" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Croods2</h2>
+                        <p class="movie-details-description">In the primaeval era, Grug and his family risk the dangers of their surroundings to find a new dwelling place.</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> November 25, 2023</p>
+                        <p class="movie-details-info"><strong>Director:</strong> Joel crawford</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Nicolas Cage, Emma Stone, Ryan renolds</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Family, Comedy</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/p-3.jpg" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Mr &amp; Mrs Smith</h2>
+                        <p class="movie-details-description">A husband and wife struggle to keep their marriage alive until they realise they are both secretly working as assassins.</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> January 1, 2023</p>
+                        <p class="movie-details-info"><strong>Director:</strong>Dougn Lemon</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Brad pitt , Angelina Jolie</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Action, Comedy</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/p-15.jpg" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Slumberland</h2>
+                        <p class="movie-details-description">A young girl discovers a secret map to the dreamworld of Slumberland</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> January 1, 2023</p>
+                        <p class="movie-details-info"><strong>Director:</strong> Francis Lawrence</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Jason Momoa, Marlow Barkely , Kyle Chandler</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Sci-fi</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/p-2.jpg" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Dora</h2>
+                        <p class="movie-details-description">Dora Marquez embarks on a mission with her monkey, Boots, and her friends to rescue her missing parents</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> January 1, 2023</p>
+                        <p class="movie-details-info"><strong>Director:</strong> James Bobbin</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Isebella Marced , Eva Longoria , John Smith</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Adventure</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-details-container">
+                <div class="movie-details-content">
+                    <img src="img/k-13.webp" alt="Another Movie Poster" loading="lazy">
+                    <div class="movie-details-text">
+                        <h2 class="movie-details-title">Batman Forever</h2>
+                        <p class="movie-details-description">Batman must stop Two-Face, who seeks revenge from him after a courtroom accident leaves him disfigured on one side</p>
+                        <p class="movie-details-info"><strong>Release Date:</strong> March 21, 2023</p>
+                        <p class="movie-details-info"><strong>Director:</strong> Joel Schamucher</p>
+                        <p class="movie-details-info"><strong>Stars:</strong> Val kilmer, Jim Carry</p>
+                        <p class="movie-details-info"><strong>Genres:</strong> Action, Fantacy</p>
+                        <a href="bookticket.html" class="movie-details-button">Buy Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="movies-details-content" aria-live="polite"><!-- Movie details will be displayed here --></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i><span>Email: Info@eCineplex.com</span></p>
+                <p><i class="fas fa-phone-alt"></i><span>Phone: +94778953450</span></p>
+                <p><i class="fas fa-map-marker-alt"></i><span>Address: 165/3/2 yatinuwarastreet Kandy</span></p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ol class="list">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ol>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/?lang=en" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://lk.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2023 your company . All rights reserved</p>
+            <p>Designed by Bimasha Jayathunga</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

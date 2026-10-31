@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Cineplex</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="Home.html" class="logo" aria-label="Cineplex home"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><rect x="2" y="2" width="36" height="36" rx="11" fill="url(#logo-grad)"/><g fill="#fff" fill-opacity="0.35"><rect x="8" y="6" width="4" height="3" rx="1"/><rect x="15" y="6" width="4" height="3" rx="1"/><rect x="22" y="6" width="4" height="3" rx="1"/><rect x="29" y="6" width="4" height="3" rx="1"/><rect x="8" y="31" width="4" height="3" rx="1"/><rect x="15" y="31" width="4" height="3" rx="1"/><rect x="22" y="31" width="4" height="3" rx="1"/><rect x="29" y="31" width="4" height="3" rx="1"/></g><path class="logo-play" d="M16.5 13.5v13l11-6.5z" fill="#d6fc00"/></svg><span class="logo-text">CINE<span>PLEX</span></span></a>
+            <nav class="menu" id="site-menu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ul>
+                <form class="search" action="Movies.html" method="GET" role="search">
+                    <input type="search" name="q" class="searchTerm" placeholder="What are you looking for?" aria-label="Search movies">
+                    <button type="submit" class="searchButton" aria-label="Search"><i class="fa fa-search"></i></button>
+                </form>
+            </nav>
+            <a href="signup.html" class="signup-icon" aria-label="Sign up" title="Sign up"><i class="fas fa-user-plus"></i></a>
+            <button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-slider" aria-roledescription="carousel" aria-label="Featured movies">
+            <div class="hero-slides">
+                <article class="featured-content hero-slide is-active" style="--hero-img: url('img/k-2.jpg');" aria-roledescription="slide" aria-label="1 of 5">
+                    <div class="featured-text">
+                        <div class="hero-meta"><span class="hero-badge"><i class="fas fa-fire"></i> Featured</span><span>Fantasy</span><span>2011</span></div>
+                        <h1 class="hero-title">Harry Potter and the Deathly Hallows</h1>
+                        <p class="featured-desc">Harry Potter and the Deathly Hallows – Part 2 is a 2011 fantasy film directed by David Yates from a screenplay by Steve Kloves. The film is the second of two cinematic parts based on the 2007 novel Harry Potter and the Deathly Hallows by J. K. Rowling.</p>
+                        <p class="hero-credits"><i class="fas fa-video"></i> Director: David Yates</p>
+                        <div class="hero-actions">
+                            <a href="bookticket.html" class="featured-button"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
+                            <a href="Movies.html" class="featured-button btn-ghost">Movie Details</a>
+                        </div>
+                    </div>
+                    <figure class="featured-frame">
+                        <img src="img/k-2.jpg" alt="Harry Potter and the Deathly Hallows" width="1920" height="1080">
+                    </figure>
+                </article>
+
+                <article class="featured-content hero-slide" style="--hero-img: url('img/p-9.jpg');" aria-roledescription="slide" aria-label="2 of 5">
+                    <div class="featured-text">
+                        <div class="hero-meta"><span class="hero-badge"><i class="fas fa-star"></i> Now Showing</span><span>Sci-fi, Action</span><span>2023</span></div>
+                        <h2 class="hero-title">Avatar2</h2>
+                        <p class="featured-desc">jake Sully and Ney'tiri have formed a family and are doing everything to stay together.</p>
+                        <p class="hero-credits"><i class="fas fa-video"></i> Director: James Cameron &nbsp;·&nbsp; Stars: Zoe Saldana, Sam wortington</p>
+                        <div class="hero-actions">
+                            <a href="bookticket.html" class="featured-button"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
+                            <a href="Movies.html?q=Avatar2" class="featured-button btn-ghost">Movie Details</a>
+                        </div>
+                    </div>
+                    <figure class="featured-frame">
+                        <img src="img/p-9.jpg" alt="Avatar2" width="1000" height="600" loading="lazy">
+                    </figure>
+                </article>
+
+                <article class="featured-content hero-slide" style="--hero-img: url('img/k-9.webp');" aria-roledescription="slide" aria-label="3 of 5">
+                    <div class="featured-text">
+                        <div class="hero-meta"><span class="hero-badge"><i class="fas fa-bolt"></i> Trending</span><span>Action, Romance</span><span>2022</span></div>
+                        <h2 class="hero-title">Jumanji</h2>
+                        <p class="featured-desc">When Spencer goes back into the fantastical world of Jumanji, pals Martha, Fridge and Bethany re-enter the game to bring him home.</p>
+                        <p class="hero-credits"><i class="fas fa-video"></i> Director: Jake Kasdan &nbsp;·&nbsp; Stars: Ruby Roundhouse, Bethany Walker, Alan Parrish</p>
+                        <div class="hero-actions">
+                            <a href="bookticket.html" class="featured-button"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
+                            <a href="Movies.html?q=Jumanji" class="featured-button btn-ghost">Movie Details</a>
+                        </div>
+                    </div>
+                    <figure class="featured-frame">
+                        <img src="img/k-9.webp" alt="Jumanji" loading="lazy">
+                    </figure>
+                </article>
+
+                <article class="featured-content hero-slide" style="--hero-img: url('img/k-3.webp');" aria-roledescription="slide" aria-label="4 of 5">
+                    <div class="featured-text">
+                        <div class="hero-meta"><span class="hero-badge"><i class="fas fa-heart"></i> Family Pick</span><span>Animation, comedy</span><span>2023</span></div>
+                        <h2 class="hero-title">Hotel Trasylvania3</h2>
+                        <p class="featured-desc">Count Dracula feels lonely and depressed while running his hotel for monsters.</p>
+                        <p class="hero-credits"><i class="fas fa-video"></i> Director: Genndy Tartakovsky &nbsp;·&nbsp; Stars: Andy Samburg, Selena Gomez, Adam Zandler</p>
+                        <div class="hero-actions">
+                            <a href="bookticket.html" class="featured-button"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
+                            <a href="Movies.html?q=Hotel" class="featured-button btn-ghost">Movie Details</a>
+                        </div>
+                    </div>
+                    <figure class="featured-frame">
+                        <img src="img/k-3.webp" alt="Hotel Trasylvania3" loading="lazy">
+                    </figure>
+                </article>
+
+                <article class="featured-content hero-slide" style="--hero-img: url('img/p-16.jpg');" aria-roledescription="slide" aria-label="5 of 5">
+                    <div class="featured-text">
+                        <div class="hero-meta"><span class="hero-badge"><i class="fas fa-dragon"></i> Adventure</span><span>Action, Sci-Fi</span><span>2013</span></div>
+                        <h2 class="hero-title">Dragon Heart3</h2>
+                        <p class="featured-desc">Drago, a cursed dragon, and Gareth, a young knight, share an unbreakable bond.</p>
+                        <p class="hero-credits"><i class="fas fa-video"></i> Director: Colin Teague &nbsp;·&nbsp; Stars: Ben Kingsley, jullian moris, Ozama Oancea</p>
+                        <div class="hero-actions">
+                            <a href="bookticket.html" class="featured-button"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>
+                            <a href="Movies.html?q=Dragon" class="featured-button btn-ghost">Movie Details</a>
+                        </div>
+                    </div>
+                    <figure class="featured-frame">
+                        <img src="img/p-16.jpg" alt="Dragon Heart3" width="1280" height="720" loading="lazy">
+                    </figure>
+                </article>
+            </div>
+
+            <div class="hero-controls">
+                <button type="button" class="hero-arrow hero-prev" aria-label="Previous movie"><i class="fas fa-chevron-left"></i></button>
+                <div class="hero-tabs" role="tablist" aria-label="Choose a featured movie">
+                    <button type="button" class="hero-tab is-active" role="tab" aria-selected="true"><img src="img/k-2.jpg" alt=""><span class="hero-tab-text"><strong>Harry Potter</strong><small>Fantasy</small></span><span class="hero-progress"><span></span></span></button>
+                    <button type="button" class="hero-tab" role="tab" aria-selected="false"><img src="img/p-9.jpg" alt=""><span class="hero-tab-text"><strong>Avatar2</strong><small>Sci-fi</small></span><span class="hero-progress"><span></span></span></button>
+                    <button type="button" class="hero-tab" role="tab" aria-selected="false"><img src="img/k-9.webp" alt=""><span class="hero-tab-text"><strong>Jumanji</strong><small>Action</small></span><span class="hero-progress"><span></span></span></button>
+                    <button type="button" class="hero-tab" role="tab" aria-selected="false"><img src="img/k-3.webp" alt=""><span class="hero-tab-text"><strong>Hotel Trasylvania3</strong><small>Animation</small></span><span class="hero-progress"><span></span></span></button>
+                    <button type="button" class="hero-tab" role="tab" aria-selected="false"><img src="img/p-16.jpg" alt=""><span class="hero-tab-text"><strong>Dragon Heart3</strong><small>Adventure</small></span><span class="hero-progress"><span></span></span></button>
+                </div>
+                <button type="button" class="hero-arrow hero-next" aria-label="Next movie"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="movie-list-container">
+            <h2 class="movie-list-title">Now Showing</h2>
+            <div class="movie-list-wrapper">
+                <button type="button" class="arrow arrow-prev" aria-label="Previous movies"><i class="fas fa-chevron-left"></i></button>
+                <div class="movie-list">
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-16.jpg" alt="Dragon Heart3" loading="lazy">
+                        <span class="movie-list-item-title">Dragon Heart3</span>
+                        <p class="movie-list-item-desc">Drago, a cursed dragon, and Gareth, a young knight, share an unbreakable bond. </p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/k-3.webp" alt="Hotel Trasylvania3" loading="lazy">
+                        <span class="movie-list-item-title">Hotel Trasylvania3</span>
+                        <p class="movie-list-item-desc">Count Dracula feels lonely and depressed while running his hotel for monsters.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/k-9.webp" alt="Jumanji" loading="lazy">
+                        <span class="movie-list-item-title">Jumanji</span>
+                        <p class="movie-list-item-desc">When Spencer goes back into the fantastical world of Jumanji, pals Martha, Fridge and Bethany re-enter the game to bring him home.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-9.jpg" alt="Avatar2" loading="lazy">
+                        <span class="movie-list-item-title">Avatar2</span>
+                        <p class="movie-list-item-desc">jake Sully and Ney'tiri have formed a family and are doing everything to stay together. </p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/k-15.jpg" alt="Centtral Intelligence" loading="lazy">
+                        <span class="movie-list-item-title">Centtral Intelligence</span>
+                        <p class="movie-list-item-desc">Accountant Calvin, who was the most popular boy at school, meets his ex-classmate, Bob, at a reunion.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-10.jpg" alt="minions" loading="lazy">
+                        <span class="movie-list-item-title">minions</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                            hic fugit similique accusantium.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/k-14.webp" alt="Her" loading="lazy">
+                        <span class="movie-list-item-title">Her</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                            hic fugit similique accusantium.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                </div>
+                <button type="button" class="arrow arrow-next" aria-label="More movies"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="movie-list-container">
+            <div class="movie-list-wrapper">
+                <button type="button" class="arrow arrow-prev" aria-label="Previous movies"><i class="fas fa-chevron-left"></i></button>
+                <div class="movie-list">
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-4.png" alt="Croods2" loading="lazy">
+                        <span class="movie-list-item-title">Croods2</span>
+                        <p class="movie-list-item-desc">In the primaeval era, Grug and his family risk the dangers of their surroundings to find a new dwelling place.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-3.jpg" alt="Mr &amp; Mrs Smith" loading="lazy">
+                        <span class="movie-list-item-title">Mr &amp; Mrs Smith</span>
+                        <p class="movie-list-item-desc">A husband and wife struggle to keep their marriage alive until they realise they are both secretly working as assassins.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-15.jpg" alt="Slumberland" loading="lazy">
+                        <span class="movie-list-item-title">Slumberland</span>
+                        <p class="movie-list-item-desc">A young girl discovers a secret map to the dreamworld of Slumberland,</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-2.jpg" alt="Dora" loading="lazy">
+                        <span class="movie-list-item-title">Dora</span>
+                        <p class="movie-list-item-desc">Dora Marquez embarks on a mission with her monkey, Boots, and her friends to rescue her missing parents</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/k-13.webp" alt="Batman Forever" loading="lazy">
+                        <span class="movie-list-item-title">Batman Forever</span>
+                        <p class="movie-list-item-desc">Batman must stop Two-Face, who seeks revenge from him after a courtroom accident leaves him disfigured on one side</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-11.jpeg" alt="Her" loading="lazy">
+                        <span class="movie-list-item-title">Her</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                            hic fugit similique accusantium.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/p-13.webp" alt="Her" loading="lazy">
+                        <span class="movie-list-item-title">Her</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                            hic fugit similique accusantium.</p>
+                        <a href="bookticket.html" class="movie-list-item-button">Buy Tickets</a>
+                    </div>
+                </div>
+                <button type="button" class="arrow arrow-next" aria-label="More movies"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <section class="featured-content featured-banner" style="--hero-img: url('img/p-15.jpg');">
+            <figure class="featured-frame">
+                <img src="img/p-15.jpg" alt="Tangled" width="1440" height="1080" loading="lazy">
+            </figure>
+            <div class="featured-text">
+                <h1>Tangled</h1>
+                <p class="featured-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto illo dolor
+                    deserunt nam assumenda ipsa eligendi dolore, ipsum id fugiat quo enim impedit, laboriosam omnis
+                    minima voluptatibus incidunt. Accusamus, provident.</p>
+                <a href="bookticket.html" class="featured-button btn-ghost"><i class="fas fa-play"></i> Watch Trailer</a>
+            </div>
+        </section>
+
+        <section class="movie-list-container">
+            <h2 class="movie-list-title">UPCOMING MOVIES</h2>
+            <div class="movie-list-wrapper">
+                <button type="button" class="arrow arrow-prev" aria-label="Previous movies"><i class="fas fa-chevron-left"></i></button>
+                <div class="movie-list">
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/s-1.webp" alt="Barfi" loading="lazy">
+                        <span class="movie-list-item-title">Barfi</span>
+                        <p class="movie-list-item-desc">Barfi forms a special bond with Jhilmil, a girl with autism.</p>
+                        <a href="https://www.imdb.com/title/tt2082197/" class="movie-list-item-button btn-ghost">Watch Trailer</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/s-2.png" alt="Rio" loading="lazy">
+                        <span class="movie-list-item-title">Rio</span>
+                        <p class="movie-list-item-desc">Captured by smugglers when he was just a hatchling, a macaw named Blu never learned to fly .</p>
+                        <a href="https://www.imdb.com/title/tt1436562/?ref_=nv_sr_srsg_0_tt_6_nm_2_q_Rio" class="movie-list-item-button btn-ghost">Watch Trailer</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/s-4.png" alt="Tangled" loading="lazy">
+                        <span class="movie-list-item-title">Tangled</span>
+                        <p class="movie-list-item-desc">Rapunzel, an innocent, young girl, is locked up by her overly protective mother.</p>
+                        <a href="https://www.imdb.com/title/tt0398286/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Tangled" class="movie-list-item-button btn-ghost">Watch Trailer</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/s-5.jpg" alt="Mulan" loading="lazy">
+                        <span class="movie-list-item-title">Mulan</span>
+                        <p class="movie-list-item-desc">When her father is unable to join the army due to his old age, Mulan, a young woman</p>
+                        <a href="https://www.imdb.com/title/tt0120762/?ref_=nv_sr_srsg_0_tt_7_nm_1_q_mulan" class="movie-list-item-button btn-ghost">Watch Trailer</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/s-7.jpg" alt="Home Alone" loading="lazy">
+                        <span class="movie-list-item-title">Home Alone</span>
+                        <p class="movie-list-item-desc"> when thieves try to break into his home, he puts up a fight like no other.</p>
+                        <a href="https://www.imdb.com/title/tt0099785/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_Home%2520Alone" class="movie-list-item-button btn-ghost">Watch Trailer</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/s-6.webp" alt="Beauty and the Beast" loading="lazy">
+                        <span class="movie-list-item-title">Beauty and the Beast</span>
+                        <p class="movie-list-item-desc">Belle embarks on a journey to save her father from a creature that has locked him in his dungeon.</p>
+                        <a href="https://www.imdb.com/title/tt2771200/?ref_=nv_sr_srsg_0_tt_6_nm_2_q_Beauty%2520" class="movie-list-item-button btn-ghost">Watch Trailer</a>
+                    </div>
+                    <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/s-8.jpg" alt="Chakde India" loading="lazy">
+                        <span class="movie-list-item-title">Chakde India</span>
+                        <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                            hic fugit similique accusantium.</p>
+                        <a href="https://www.imdb.com/title/tt0871510/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_chakde%2520in" class="movie-list-item-button btn-ghost">Watch Trailer</a>
+                    </div>
+                </div>
+                <button type="button" class="arrow arrow-next" aria-label="More movies"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i><span>Email: Info@eCineplex.com</span></p>
+                <p><i class="fas fa-phone-alt"></i><span>Phone: +94778953450</span></p>
+                <p><i class="fas fa-map-marker-alt"></i><span>Address: 165/3/2 yatinuwarastreet Kandy</span></p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ol class="list">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ol>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/?lang=en" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://lk.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2023 your company . All rights reserved</p>
+            <p>Designed by Bimasha Jayathunga</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

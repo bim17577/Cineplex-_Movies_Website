@@ -1,0 +1,556 @@
+/* ==========================================================================
+   Book ticket page – loaded after style.css
+   ========================================================================== */
+
+/* ---------- Booking form + info tables ---------- */
+
+.booking-layout {
+  width: min(var(--wrap), calc(100% - 32px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.booking-form-container h1 {
+  margin-bottom: 28px;
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  font-weight: 800;
+}
+
+.booking-form-container h1::after,
+.feedback-container h1::after,
+.special-promotions-title::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 4px;
+  margin-top: 14px;
+  border-radius: 4px;
+  background: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+/* ---------- Hall picker ---------- */
+
+.hall-picker {
+  padding: 0;
+  border: 0;
+}
+
+.hall-picker legend {
+  margin-bottom: 8px;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.hall-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+main .hall-option {
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Visually hidden but still focusable and validated by the browser */
+.hall-option input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hall-card {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s var(--ease), box-shadow 0.25s;
+}
+
+.hall-icon {
+  grid-row: span 2;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  border-radius: 12px;
+  color: var(--accent);
+  transition: background 0.25s, color 0.25s;
+}
+
+.hall-name {
+  color: var(--text);
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+.hall-tech {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.hall-option:hover .hall-card {
+  border-color: rgba(255, 46, 147, 0.6);
+  transform: translateY(-2px);
+}
+
+.hall-option input:focus-visible + .hall-card {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.hall-option input:checked + .hall-card {
+  background: linear-gradient(135deg, rgba(214, 252, 0, 0.16), rgba(214, 252, 0, 0.04));
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(214, 252, 0, 0.15);
+}
+
+.hall-option input:checked + .hall-card .hall-icon {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* ---------- Seat picker ---------- */
+
+.seat-picker {
+  margin-bottom: 22px;
+  padding: 20px;
+  background: rgba(var(--bg-rgb), 0.55);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  animation: fade-up 0.5s var(--ease) both;
+}
+
+.seat-picker-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 18px;
+}
+
+.seat-picker-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+}
+
+.seat-picker-hall {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Curved, glowing cinema screen */
+.screen {
+  position: relative;
+  margin: 0 8% 26px;
+  padding-top: 14px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.screen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  border-top: 3px solid var(--accent);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  filter: drop-shadow(0 -4px 10px rgba(214, 252, 0, 0.6));
+}
+
+.seat-map {
+  display: grid;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.seat-map.is-loading {
+  opacity: 0.4;
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.seat-row-label {
+  flex: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.seat {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 34px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: var(--surface-2);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px 8px 4px 4px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: clamp(0.55rem, 1.6vw, 0.7rem);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s var(--ease), box-shadow 0.2s;
+}
+
+.seat.aisle {
+  margin-right: clamp(6px, 2.5vw, 16px);
+}
+
+.seat:hover:not(:disabled) {
+  border-color: var(--hot);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(255, 46, 147, 0.35);
+}
+
+.seat.is-selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(214, 252, 0, 0.45);
+}
+
+.seat.is-sold {
+  background: var(--sold);
+  border-color: var(--sold);
+  color: rgba(255, 255, 255, 0.85);
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.seat-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin: 20px 0 14px;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.seat-legend li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seat-swatch {
+  width: 16px;
+  height: 16px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 5px 5px 3px 3px;
+}
+
+.seat-swatch.is-selected {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.seat-swatch.is-sold {
+  background: var(--sold);
+  border-color: var(--sold);
+}
+
+.seat-summary {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.seat-summary strong {
+  color: var(--accent);
+}
+
+.seat-error {
+  margin-top: 6px;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.seat-error:empty {
+  display: none;
+}
+
+#booking-form button[type="submit"] {
+  width: 100%;
+  margin-top: 8px;
+  padding-block: 15px;
+  font-size: 1rem;
+}
+
+#paypal-button-container {
+  margin-top: 20px;
+}
+
+#paypal-button-container:empty {
+  display: none;
+}
+
+.booking-side {
+  display: grid;
+  gap: 24px;
+}
+
+#seating h1,
+#parking h1 {
+  margin-bottom: 18px;
+  font-size: 1.15rem;
+}
+
+.info-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 0.95rem;
+}
+
+.info-table th,
+.info-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.info-table th {
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.info-table th:last-child,
+.info-table td:last-child {
+  text-align: right;
+}
+
+.info-table td:last-child {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.info-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.info-table td {
+  transition: background 0.2s;
+}
+
+.info-table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ---------- Special promotions ---------- */
+
+.special-promotions {
+  width: min(var(--wrap), calc(100% - 32px));
+  margin: clamp(64px, 9vw, 112px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 24px;
+}
+
+.special-promotions-title {
+  grid-column: 1 / -1;
+  margin-bottom: 8px;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 800;
+  text-align: center;
+}
+
+.special-promotions-title::after {
+  margin-inline: auto;
+}
+
+.promotion-item {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  transition: transform 0.35s var(--ease), border-color 0.35s, box-shadow 0.35s;
+}
+
+.promotion-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(214, 252, 0, 0.35);
+  box-shadow: var(--shadow);
+}
+
+.promotion-media {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.promotion-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+
+.promotion-item:hover .promotion-media img {
+  transform: scale(1.07);
+}
+
+.promotion-title {
+  padding: 22px 24px 0;
+  font-size: 1.25rem;
+}
+
+.promotion-desc {
+  flex: 1;
+  padding: 10px 24px 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.promotion-button {
+  align-self: flex-start;
+  margin: 22px 24px 24px;
+}
+
+.promotion-item:hover .promotion-button {
+  background-position: right center;
+  border-color: transparent;
+  color: #fff;
+}
+
+/* ---------- Feedback form ---------- */
+
+.feedback-container {
+  width: min(880px, calc(100% - 32px));
+  margin: clamp(64px, 9vw, 112px) auto 0;
+}
+
+.feedback-container h1 {
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  font-weight: 800;
+}
+
+.feedback-container > p {
+  margin: 14px 0 28px;
+  color: var(--muted);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+  align-items: end;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 960px) {
+  .booking-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .hall-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .form-row,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Give the seat map as much width as possible so seats are easy to tap */
+  .booking-form-container {
+    padding-inline: 14px;
+  }
+
+  .seat-picker {
+    padding: 16px 6px;
+  }
+
+  .seat-map {
+    overflow-x: auto;
+  }
+
+  .seat-row {
+    gap: 2px;
+  }
+
+  .seat-row-label:last-child {
+    display: none;
+  }
+
+  .seat {
+    min-width: 21px;
+    border-radius: 6px 6px 3px 3px;
+  }
+
+  .seat.aisle {
+    margin-right: 6px;
+  }
+
+  .info-table th,
+  .info-table td {
+    padding: 12px;
+  }
+
+  .feedback-container input[type="submit"] {
+    width: 100%;
+  }
+}

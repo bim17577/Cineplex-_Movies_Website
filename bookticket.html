@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bookticket.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+    <title>bookticket</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="Home.html" class="logo" aria-label="Cineplex home"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><rect x="2" y="2" width="36" height="36" rx="11" fill="url(#logo-grad)"/><g fill="#fff" fill-opacity="0.35"><rect x="8" y="6" width="4" height="3" rx="1"/><rect x="15" y="6" width="4" height="3" rx="1"/><rect x="22" y="6" width="4" height="3" rx="1"/><rect x="29" y="6" width="4" height="3" rx="1"/><rect x="8" y="31" width="4" height="3" rx="1"/><rect x="15" y="31" width="4" height="3" rx="1"/><rect x="22" y="31" width="4" height="3" rx="1"/><rect x="29" y="31" width="4" height="3" rx="1"/></g><path class="logo-play" d="M16.5 13.5v13l11-6.5z" fill="#d6fc00"/></svg><span class="logo-text">CINE<span>PLEX</span></span></a>
+            <nav class="menu" id="site-menu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ul>
+                <form class="search" action="Movies.html" method="GET" role="search">
+                    <input type="search" name="q" class="searchTerm" placeholder="What are you looking for?" aria-label="Search movies">
+                    <button type="submit" class="searchButton" aria-label="Search"><i class="fa fa-search"></i></button>
+                </form>
+            </nav>
+            <a href="signup.html" class="signup-icon" aria-label="Sign up" title="Sign up"><i class="fas fa-user-plus"></i></a>
+            <button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="booking-layout">
+            <div class="booking-form-container card">
+                <h1>Book Your Ticket</h1>
+                <form id="booking-form" action="bookingticketform.php" method="POST">
+                    <div class="form-group">
+                        <label for="movie">Select Movie:</label>
+                        <select id="movie" name="movie">
+                            <option value="Harry Potter and the Deathly Hallows">Harry Potter and the Deathly Hallows</option>
+                            <option value="Dragon Heart 3">Dragon Heart 3</option>
+                            <option value="Hotel Trasylvania3">Hotel Trasylvania3</option>
+                            <option value="Jumanji">Jumanji</option>
+                            <option value="Avatar2">Avatar2</option>
+                            <option value="Centtral Intelligence">Centtral Intelligence</option>
+                            <option value="minions">minions</option>
+                            <option value="Croods2">Croods2</option>
+                            <option value="Mr &amp; Mrs Smith">Mr &amp; Mrs Smith</option>
+                            <option value="Slumberland">Slumberland</option>
+                            <option value="Dora">Dora</option>
+                            <option value="Batman Forever">Batman Forever</option>
+                            <option value="Barfi">Barfi</option>
+                            <option value="Rio">Rio</option>
+                            <option value="Tangled">Tangled</option>
+                            <option value="Mulan">Mulan</option>
+                            <option value="Home Alone">Home Alone</option>
+                            <!-- Add other movie options here -->
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Select Date:</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="showtime">Select Show Time:</label>
+                            <select id="showtime" name="showtime">
+                                <option value="10:00 AM">10:00 AM</option>
+                                <option value="1:00 PM">1:00 PM</option>
+                                <!-- Add other show time options here -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <fieldset class="form-group hall-picker">
+                        <legend>Select Hall:</legend>
+                        <div class="hall-options">
+                            <label class="hall-option">
+                                <input type="radio" name="hall" value="B1" required>
+                                <span class="hall-card">
+                                    <span class="hall-icon"><i class="fas fa-tv"></i></span>
+                                    <span class="hall-name">Hall B1</span>
+                                    <span class="hall-tech">4K Digital Projection</span>
+                                </span>
+                            </label>
+                            <label class="hall-option">
+                                <input type="radio" name="hall" value="B2" required>
+                                <span class="hall-card">
+                                    <span class="hall-icon"><i class="fas fa-bolt"></i></span>
+                                    <span class="hall-name">Hall B2</span>
+                                    <span class="hall-tech">2K Laser Projection</span>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <div class="seat-picker" id="seat-picker" hidden>
+                        <div class="seat-picker-head">
+                            <span class="seat-picker-title">Pick Your Seats</span>
+                            <span class="seat-picker-hall" id="seat-picker-hall"></span>
+                        </div>
+                        <div class="screen">Screen</div>
+                        <div class="seat-map" id="seat-map" role="group" aria-label="Seat map"></div>
+                        <ul class="seat-legend">
+                            <li><span class="seat-swatch"></span>Available</li>
+                            <li><span class="seat-swatch is-selected"></span>Selected</li>
+                            <li><span class="seat-swatch is-sold"></span>Sold</li>
+                        </ul>
+                        <p class="seat-summary" id="seat-summary" aria-live="polite">No seats selected yet.</p>
+                        <p class="seat-error" id="seat-error" role="alert"></p>
+                        <input type="hidden" name="seats" id="seats-input">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <button type="submit">Book Now</button>
+                    <div id="paypal-button-container"></div>
+                </form>
+            </div>
+
+            <div class="booking-side">
+                <section id="seating" class="card">
+                    <h1>Seating Capacities</h1>
+                    <table class="info-table">
+                        <tr>
+                            <th>Seating Option</th>
+                            <th>Capacity</th>
+                        </tr>
+                        <tr>
+                            <td>Standard Seating</td>
+                            <td>150 seats</td>
+                        </tr>
+                        <tr>
+                            <td>VIP Seating</td>
+                            <td>50 seats</td>
+                        </tr>
+                        <tr>
+                            <td>Wheelchair Accessible Seating</td>
+                            <td>10 seats</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section id="parking" class="card">
+                    <h1>Parking Availability</h1>
+                    <table class="info-table">
+                        <tr>
+                            <th>Parking Option</th>
+                            <th>Availability</th>
+                        </tr>
+                        <tr>
+                            <td>On-site Parking</td>
+                            <td>Yes</td>
+                        </tr>
+                        <tr>
+                            <td>Number of Parking Spaces</td>
+                            <td>200</td>
+                        </tr>
+                        <tr>
+                            <td>Reserved Parking for VIP Customers</td>
+                            <td>Yes</td>
+                        </tr>
+                    </table>
+                </section>
+            </div>
+        </div>
+
+        <div class="special-promotions">
+            <h1 class="special-promotions-title">Special Promotions</h1>
+            <div class="promotion-item">
+                <div class="promotion-media"><img src="img/p-9.jpg" alt="Promotion 1" loading="lazy"></div>
+                <h2 class="promotion-title">Special Discount</h2>
+                <p class="promotion-desc">Enjoy an exclusive limited-time offer! Get 25% off on all movie tickets booked through our website. Hurry, grab your seats now and indulge in the magic of cinema at an unbeatable price</p>
+                <a href="#" class="promotion-button btn-ghost">View Offer</a>
+            </div>
+            <div class="promotion-item">
+                <div class="promotion-media"><img src="img/s-5.jpg" alt="Promotion 2" loading="lazy"></div>
+                <h2 class="promotion-title">Free Popcorn</h2>
+                <p class="promotion-desc">Enjoy the ultimate movie experience with free popcorn on our website! Dive into your favorite films with a delicious treat, courtesy of cineplex. Indulge in the perfect  flavor </p>
+                <a href="#" class="promotion-button btn-ghost">View Offer</a>
+            </div>
+            <div class="promotion-item">
+                <div class="promotion-media"><img src="img/k-15.jpg" alt="Promotion 3" loading="lazy"></div>
+                <h2 class="promotion-title">Exclusive Premiere</h2>
+                <p class="promotion-desc">Get ready for an exclusive premiere like no other! Dive into the cinematic world with our upcoming blockbuster, unfolding its grandeur only on our movie website</p>
+                <a href="#" class="promotion-button btn-ghost">View Offer</a>
+            </div>
+        </div>
+        <!-- End Special Promotions Section -->
+
+        <div class="feedback-container card">
+            <h1>Feedback Form</h1>
+            <p>Thank you for using Cineplex. We value your feedback.</p>
+            <form action="feedback.php" method="post" class="form-grid">
+                <div class="form-group">
+                    <label for="fb-name">Name:</label>
+                    <input type="text" id="fb-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fb-email">Email:</label>
+                    <input type="email" id="fb-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service-rating">How would you rate our service (1-10)?</label>
+                    <input type="number" id="service-rating" name="service-rating" min="1" max="10" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="likelihood">How likely are you to recommend our service to others? (1-10)</label>
+                    <input type="number" id="likelihood" name="likelihood" min="1" max="10" required>
+                </div>
+
+                <div class="form-group full">
+                    <label for="improvements">How can we improve our service?</label>
+                    <textarea id="improvements" name="improvements"></textarea>
+                </div>
+
+                <div class="form-group full">
+                    <label for="favorite-feature">What is your favorite feature of our service?</label>
+                    <input type="text" id="favorite-feature" name="favorite-feature">
+                </div>
+
+                <div class="form-group full">
+                    <label for="additional-comments">Any additional comments or suggestions?</label>
+                    <textarea id="additional-comments" name="additional-comments"></textarea>
+                </div>
+
+                <div class="form-group full">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i><span>Email: Info@eCineplex.com</span></p>
+                <p><i class="fas fa-phone-alt"></i><span>Phone: +94778953450</span></p>
+                <p><i class="fas fa-map-marker-alt"></i><span>Address: 165/3/2 yatinuwarastreet Kandy</span></p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ol class="list">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ol>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/?lang=en" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://lk.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2023 your company . All rights reserved</p>
+            <p>Designed by Bimasha Jayathunga</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="seats.js"></script>
+</body>
+
+</html>

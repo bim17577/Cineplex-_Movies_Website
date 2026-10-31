@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="food.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Food &amp; Drinks</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <a href="Home.html" class="logo" aria-label="Cineplex home"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="logo-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff2e93"/><stop offset="1" stop-color="#7c3aed"/></linearGradient></defs><rect x="2" y="2" width="36" height="36" rx="11" fill="url(#logo-grad)"/><g fill="#fff" fill-opacity="0.35"><rect x="8" y="6" width="4" height="3" rx="1"/><rect x="15" y="6" width="4" height="3" rx="1"/><rect x="22" y="6" width="4" height="3" rx="1"/><rect x="29" y="6" width="4" height="3" rx="1"/><rect x="8" y="31" width="4" height="3" rx="1"/><rect x="15" y="31" width="4" height="3" rx="1"/><rect x="22" y="31" width="4" height="3" rx="1"/><rect x="29" y="31" width="4" height="3" rx="1"/></g><path class="logo-play" d="M16.5 13.5v13l11-6.5z" fill="#d6fc00"/></svg><span class="logo-text">CINE<span>PLEX</span></span></a>
+            <nav class="menu" id="site-menu">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ul>
+                <form class="search" action="Movies.html" method="GET" role="search">
+                    <input type="search" name="q" class="searchTerm" placeholder="What are you looking for?" aria-label="Search movies">
+                    <button type="submit" class="searchButton" aria-label="Search"><i class="fa fa-search"></i></button>
+                </form>
+            </nav>
+            <a href="signup.html" class="signup-icon" aria-label="Sign up" title="Sign up"><i class="fas fa-user-plus"></i></a>
+            <button type="button" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="page">
+        <section class="food-intro">
+            <span class="food-eyebrow"><i class="fas fa-utensils"></i> Cineplex Snack Bar</span>
+            <h1>Food &amp; Drinks</h1>
+            <p>Grab your favourite snacks before the show. Order online, then collect at the counter.</p>
+        </section>
+
+        <div class="food-layout">
+            <section class="food-menu" aria-label="Menu">
+                <div class="food-filters" role="group" aria-label="Filter menu">
+                    <button type="button" class="chip is-active" data-filter="all">All</button>
+                    <button type="button" class="chip" data-filter="popcorn"><i class="fas fa-star"></i> Popcorn</button>
+                    <button type="button" class="chip" data-filter="snacks"><i class="fas fa-hamburger"></i> Snacks &amp; Meals</button>
+                    <button type="button" class="chip" data-filter="drinks"><i class="fas fa-glass-whiskey"></i> Drinks</button>
+                </div>
+
+                <div class="food-grid">
+                    <article class="food-card" data-id="popcorn-classic" data-price="750" data-category="popcorn">
+                        <div class="food-media"><img src="img/food/popcorn-classic.jpg" alt="A bowl of salted popcorn" loading="lazy"><span class="food-tag">Bestseller</span></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Classic Salted Popcorn</h2>
+                            <p class="food-desc">Freshly popped, lightly salted and buttery: the cinema classic.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 750</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="popcorn-caramel" data-price="950" data-category="popcorn">
+                        <div class="food-media"><img src="img/food/popcorn-caramel.jpg" alt="Caramel coated popcorn" loading="lazy"></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Caramel Popcorn</h2>
+                            <p class="food-desc">Crunchy popcorn coated in golden, sweet caramel.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 950</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="chicken-wrap" data-price="1200" data-category="snacks">
+                        <div class="food-media"><img src="img/food/chicken-wrap.jpg" alt="A grilled wrap on a plate" loading="lazy"></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Chicken Wrap</h2>
+                            <p class="food-desc">Grilled chicken, crisp veggies and creamy sauce in a warm tortilla.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 1,200</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="coca-cola" data-price="400" data-category="drinks">
+                        <div class="food-media"><img src="img/food/coca-cola.jpg" alt="A glass of Coca-Cola with ice" loading="lazy"></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Coca-Cola</h2>
+                            <p class="food-desc">Ice-cold Coca-Cola, 500 ml. The perfect movie companion.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 400</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="nuggets" data-price="1100" data-category="snacks">
+                        <div class="food-media"><img src="img/food/nuggets.jpg" alt="Crispy chicken nuggets in a box" loading="lazy"><span class="food-tag">Popular</span></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Chicken Nuggets</h2>
+                            <p class="food-desc">Six golden, crispy chicken nuggets served with a dip.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 1,100</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="club-sandwich" data-price="1300" data-category="snacks">
+                        <div class="food-media"><img src="img/food/club-sandwich.jpg" alt="A toasted club sandwich" loading="lazy"></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Club Sandwich</h2>
+                            <p class="food-desc">Toasted triple-decker with chicken, egg, tomato and lettuce.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 1,300</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="nachos" data-price="1000" data-category="snacks">
+                        <div class="food-media"><img src="img/food/nachos.jpg" alt="Nachos with cheese and jalapeños" loading="lazy"></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Nachos with Cheese</h2>
+                            <p class="food-desc">Tortilla chips loaded with melted cheese, jalapeños and salsa.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 1,000</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="hot-dog" data-price="900" data-category="snacks">
+                        <div class="food-media"><img src="img/food/hot-dog.jpg" alt="A grilled hot dog in a bun" loading="lazy"></div>
+                        <div class="food-body">
+                            <h2 class="food-name">Hot Dog</h2>
+                            <p class="food-desc">Grilled sausage in a soft bun with mustard and ketchup.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 900</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-id="fries" data-price="700" data-category="snacks">
+                        <div class="food-media"><img src="img/food/fries.jpg" alt="French fries with ketchup" loading="lazy"></div>
+                        <div class="food-body">
+                            <h2 class="food-name">French Fries</h2>
+                            <p class="food-desc">Crispy golden fries, lightly salted and served hot.</p>
+                            <div class="food-foot"><span class="food-price">Rs. 700</span><div class="food-actions"></div></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="cart card" id="cart" aria-label="Your order">
+                <h2 class="cart-title"><i class="fas fa-shopping-bag"></i> Your Order</h2>
+
+                <div id="checkout-area">
+                    <p class="cart-empty" id="cart-empty">Your order is empty. Add something tasty from the menu.</p>
+                    <ul class="cart-items" id="cart-items"></ul>
+                    <div class="cart-total" id="cart-total" hidden>
+                        <span>Total</span>
+                        <strong id="cart-total-value">Rs. 0</strong>
+                    </div>
+
+                    <form class="checkout" id="checkout-form" hidden novalidate>
+                        <div class="form-group">
+                            <label for="order-name">Your Name</label>
+                            <input type="text" id="order-name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="order-email">Your Email</label>
+                            <input type="email" id="order-email" name="email" required autocomplete="email">
+                        </div>
+
+                        <fieldset class="pay-methods">
+                            <legend>Payment Method</legend>
+                            <label class="pay-option">
+                                <input type="radio" name="payment" value="card" checked>
+                                <span class="pay-card"><i class="far fa-credit-card"></i><span>Card<small>Secure payment by Stripe</small></span></span>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="payment" value="cash">
+                                <span class="pay-card"><i class="fas fa-money-bill-wave"></i><span>Cash in Hand<small>Pay at the counter</small></span></span>
+                            </label>
+                        </fieldset>
+
+                        <div class="card-panel" id="card-panel">
+                            <div class="card-element" id="card-element"></div>
+                            <p class="card-note"><i class="fas fa-lock"></i> Card details go straight to Stripe and never touch our servers.</p>
+                        </div>
+
+                        <p class="checkout-error" id="checkout-error" role="alert"></p>
+                        <button type="submit" class="checkout-button" id="checkout-button">Place Order</button>
+                    </form>
+                </div>
+
+                <div class="order-success" id="order-success" hidden>
+                    <div class="success-icon"><i class="fas fa-check"></i></div>
+                    <h3 id="success-title">Order confirmed!</h3>
+                    <p id="success-text"></p>
+                    <button type="button" class="btn btn-ghost" id="new-order">Order something else</button>
+                </div>
+            </aside>
+        </div>
+
+        <p class="photo-credits">
+            Photos from Wikimedia Commons. Caramel popcorn by Famartin (CC BY-SA 4.0), French fries by Kritzolina (CC BY-SA 4.0),
+            hot dog by stu_spivack (CC BY-SA 2.0); all other food photos are public domain.
+        </p>
+
+        <a href="#cart" class="cart-fab" id="cart-fab" hidden>
+            <span><i class="fas fa-shopping-bag"></i> <span id="cart-fab-count">0 items</span></span>
+            <strong id="cart-fab-total">Rs. 0</strong>
+        </a>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-envelope"></i><span>Email: Info@eCineplex.com</span></p>
+                <p><i class="fas fa-phone-alt"></i><span>Phone: +94778953450</span></p>
+                <p><i class="fas fa-map-marker-alt"></i><span>Address: 165/3/2 yatinuwarastreet Kandy</span></p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                <ol class="list">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Movies.html">Movies</a></li>
+                    <li><a href="bookticket.html">Book Ticket</a></li>
+                    <li><a href="food.html">Food &amp; Drinks</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="About.html">About</a></li>
+                </ol>
+            </div>
+            <div class="footer-content">
+                <h3>Follow Us</h3>
+                <ul class="social-icons">
+                    <li><a href="https://www.facebook.com/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/?lang=en" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://lk.linkedin.com/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2023 your company . All rights reserved</p>
+            <p>Designed by Bimasha Jayathunga</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="food.js"></script>
+</body>
+
+</html>
